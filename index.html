@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kathlon - Sistema de Chamados</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="imagens/logo-kathlon.png" type="image/png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body>
+
+
+
+ <section id="splash" class="splash-screen">
+  <div class="splash-grid">
+    <!-- Gráfico decorativo lateral -->
+    <div class="grafico-lateral-wrapper">
+      <img src="imagens/hexagonos.png" alt="Gráfico lateral" id="graficoLateral" class="grafico-lateral" />
+    </div>
+
+    <!-- Logo principal clicável -->
+    <div id="logoPrincipal" class="logo-principal" onclick="animarSplash()">
+      <img src="imagens/k-logo.png" alt="Logo Kathlon" />
+    </div>
+  </div>
+</section>
+
+  <!-- Conteúdo principal -->
+  <div id="site-content" class="hidden fade-in">
+    <header>
+      <div class="header-container">
+        <div class="site-title">
+          <h1>KATHLON</h1>
+          <p class="white-text">Sistema de Chamados Inteligente</p>
+        </div>
+        <!-- Botão de menu responsivo -->
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
+      </div>
+
+      <nav class="navbar">
+        <button class="menu-close" onclick="fecharMenu()">×</button>
+        <a href="#inicio">Início</a>
+        <a href="#empresa">Empresa</a>
+        <a href="#sistema">Sistema</a>
+        <a href="#uml">UML</a>
+        <a href="#bd">Banco</a>
+        <a href="#ia">IA</a>
+        <a href="#prototipo">Protótipo</a>
+        <a href="#manual">Manual</a>
+        <a href="#testes">Testes</a>
+        <a href="#implantacao">Implantação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    
+        <div class="menu-overlay" onclick="toggleMenu()"></div>
+   
+
+
+    </header>
+    
+    <main>
+      <section id="inicio">
+        <h2>Bem-vindo ao Projeto Kathlon</h2>
+        <p>Este projeto acadêmico foi desenvolvido pelos alunos do 3º semestre do curso de Análise e Desenvolvimento de Sistemas da UNIP, com o objetivo de propor uma solução moderna e inteligente para gestão de chamados internos na empresa fictícia CallSys.</p>
+        <!-- <img src="imagens/apresentacao.png" alt="Apresentação do projeto"> -->
+      </section>
+      
+    <section id="empresa" class="layout-colunas" aria-labelledby="titulo-empresa">
+  <div class="container">
+    <h2 id="titulo-empresa">Sobre a Empresa CallSys</h2>
+    <p>A <strong>CallSys</strong> é uma empresa fictícia de médio porte que atua no ramo de serviços empresariais, com foco em suporte administrativo, financeiro e técnico. Seu principal diferencial é a <strong>agilidade no atendimento interno</strong> e a <strong>cultura organizacional voltada à eficiência operacional</strong>.
+    </p>
+
+    <div class="valores-grid fade-scroll"> 
+      <div class="card">
+        <h3>Missão</h3>
+        <p>Resolver chamados com inteligência.</p>
+      </div>
+      <div class="card">
+        <h3>Visão</h3>
+        <p>Ser referência em suporte técnico inovador.</p>
+      </div>
+      <div class="card">
+        <h3>Valores</h3>
+        <p>Inovação, ética e transparência.</p>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <h3>Modelo Atual de Atendimento</h3>
+      <p>
+        Atualmente, a CallSys realiza o atendimento de chamados por meio dos seguintes canais:
+      </p>
+      <div>
+        <p><strong>E-mail:</strong> As solicitações são enviadas para <code>CallSys_Chamadoa@gmail.com</code> e para os e-mails dos técnicos responsáveis.</p>
+        <p><strong>Telefone:</strong> Um grupo de colaboradores compartilha a responsabilidade pela recepção e solução dos chamados.</li>
+      </p>
+      </div>
+      <p>
+        Esse modelo apresenta dificuldades no controle das solicitações, além de causar <strong>atrasos</strong> e <strong>falhas na priorização</strong> das tarefas.
+      </p>
+    </div>
+
+    <div class="fade-scroll">
+      <h3>Estrutura Organizacional da CallSys</h3>
+      <p>
+        A CallSys possui uma estrutura funcional composta pelos departamentos de <strong>Recursos Humanos</strong>, <strong>Financeiro</strong>, <strong>Comercial</strong> e <strong>Tecnologia da Informação</strong>.
+      </p>
+      <p>
+        O setor de TI é formado por <strong>três técnicos de suporte</strong> e <strong>um gestor</strong>, responsável por definir e conduzir as estratégias tecnológicas da empresa.
+      </p>
+    </div>
+
+    <div class="fade-scroll">
+      <h3>Parceria com a KATHLON</h3>
+      <p>
+        Visando modernizar seus processos e melhorar a gestão de chamados, a CallSys entrou em contato com a <strong>KATHLON</strong> por meio do nosso site. Após o envio de uma descrição detalhada de suas necessidades, um dos nossos especialistas realizou o levantamento inicial das <strong>diretrizes de negócio</strong>, preparando o terreno para uma futura visita técnica.
+      </p>
+    </div>
+</section>
+
+
+        <!-- <img src="imagens/empresa.png" alt="Imagem da empresa"> -->
+
+<section id="sistema" class="layout-colunas" aria-labelledby="titulo-sistema">
+  <div class="bloco-branco">
+    <h2 id="titulo-sistema">O Sistema Kathlon</h2>
+    <p>
+      A proposta do <strong>sistema Kathlon</strong> é permitir que os colaboradores da empresa registrem e acompanhem seus chamados técnicos por meio de uma plataforma web e mobile com suporte a <abbr title="Inteligência Artificial">IA</abbr>.
+    </p>
+
+    <!-- Missão, Visão, Valores -->
+    <div class="valores-grid missao-visao-valores">
+      <div class="card fade-scroll">
+        <h3>Missão</h3>
+        <p>Desenvolver soluções inteligentes e acessíveis para otimizar processos corporativos.</p>
+      </div>
+      <div class="card fade-scroll">
+        <h3>Visão</h3>
+        <p>Tornar-se líder em soluções digitais baseadas em IA para empresas de pequeno e médio porte.</p>
+      </div>
+      <div class="card fade-scroll">
+        <h3>Valores</h3>
+        <ul>
+          <p>Inovação, Transparência, Segurança da Informação, Compromisso com Resultados</p>
+        </ul>
+      </div>
+    </div>
+
+    <div class="fade-scroll">
+      <h3>Funcionalidades</h3>
+    <!-- Funcionalidades -->
+    <div class="funcionalidades-grid">
+      <div class="card fade-scroll">
+        <h3>Cadastro Inteligente</h3>
+        <p>Cadastro e triagem automática de chamados.</p>
+      </div>
+      <div class="card fade-scroll">
+        <h3>Gestão Técnica</h3>
+        <p>Controle de status e atribuição técnica.</p>
+      </div>
+      <div class="card fade-scroll">
+        <h3>Relatórios e Histórico</h3>
+        <p>Geração de relatórios e acompanhamento completo.</p>
+      </div>
+      <div class="card fade-scroll">
+        <h3>Soluções com IA</h3>
+        <p>Classificação e recomendação de soluções com apoio de IA.</p>
+      </div>
+    </div>
+    </div>
+    
+    <!-- Regras de Negócio -->
+    <div class="regras-negocio fade-scroll">
+  <h3>Regras de Negócio</h3>
+
+  <div class="info-bloco">
+    <p><strong>Classificação automatizada:</strong> Utiliza IA para triagem e redirecionamento com base no perfil técnico.</p>
+    <p><strong>Controle de acesso:</strong> Perfis definidos como Cliente, Técnico e Administrador, com permissões específicas para cada um.</p>
+    <p><strong>Conformidade com a LGPD:</strong> Consentimento explícito, anonimização e registro de operações garantem aderência à legislação.</p>
+    <p><strong>Rastreabilidade total:</strong> Todas as ações realizadas no sistema são registradas no histórico do chamado.</p>
+    <p><strong>Multiplataforma:</strong> Acesso seguro por web, desktop e mobile com autenticação baseada em e-mail e senha corporativos.</p>
+  </div>
+</div>
+
+
+    <!-- Resultados e ROI -->
+    <div class="resultados-roi fade-in">
+      <h3>Impacto e Retorno</h3>
+      <p>
+        Com a substituição do atendimento manual por um sistema inteligente, a CallSys reduziu custos em mais de <strong>R$ 4,7 milhões anuais</strong> e obteve um <strong>ROI de 9.296%</strong>. O tempo médio de resolução de chamados caiu de 8 horas para apenas 10 minutos.
+      </p>
+    </div>
+
+    <!-- Estrutura da KATHLON -->
+   <div class="fade-in">
+  <h3>Estrutura da KATHLON</h3>
+  <p>
+    Nossa estrutura organizacional é composta por três núcleos principais:
+  </p>
+
+  <div class="info-bloco">
+    <p><strong>Análise de Sistemas</strong></p>
+    <p><strong>Desenvolvimento</strong></p>
+    <p><strong>Suporte ao Cliente</strong></p>
+  </div>
+
+  <p>
+    Para atender à CallSys, formamos uma equipe multidisciplinar com <strong>analistas de sistemas</strong>, <strong>desenvolvedores back-end e front-end</strong>, <strong>especialistas em banco de dados</strong> e <strong>designers de interface</strong>, garantindo qualidade em todas as etapas do projeto.
+  </p>
+</div>
+
+
+
+   <section id="uml">
+  <h2>Modelagem UML</h2>
+  <p>Foram desenvolvidos os diagramas de Casos de Uso, Classes e Sequência para representar e validar a estrutura e o funcionamento do sistema proposto.</p>
+
+  <!-- Diagrama de Caso de Uso -->
+  <h3>Diagrama de Caso de Uso</h3>
+  <img src="imagens/diagrama de caso de uso.png" alt="Casos de Uso"class="imagem-interativa">
+  <p>
+    O diagrama de caso de uso representa as interações dos usuários com o sistema, demonstrando funcionalidades como login, abertura de chamados, consulta ao histórico e avaliação de atendimentos. Isso ajuda a visualizar de forma simples quem faz o quê dentro do sistema.
+  </p>
+
+<!-- Diagrama de Classes -->
+<h3>Diagrama de Classes</h3>
+<img src="imagens/diagrama de classe.png" alt="Diagrama de Classes" class="imagem-interativa">
+<p>
+  O sistema foi planejado com uma arquitetura bem definida, cobrindo todo o ciclo do atendimento técnico. Cada classe tem uma responsabilidade específica, respeitando o princípio da responsabilidade única. Entre os principais componentes, temos:
+</p>
+<div class="info-bloco">
+  <p><strong>Sessão:</strong> controla login, autenticação e segurança.</p>
+  <p><strong>Usuário:</strong> gerencia dados, consentimento e privacidade.</p>
+  <p><strong>Chamado:</strong> lida com abertura, andamento e encerramento de solicitações.</p>
+  <p><strong>Categoria:</strong> classifica os chamados por área ou tipo.</p>
+  <p><strong>HistóricoChamado:</strong> registra toda a movimentação e ações de um chamado.</p>
+  <p><strong>SoluçãoIA:</strong> usa IA para sugerir soluções com base em chamados anteriores.</p>
+  <p><strong>Avaliação:</strong> coleta feedback do atendimento pelo usuário.</p>
+</div>
+<p>
+  Os relacionamentos entre as classes reforçam a coesão do sistema, com conexões claras entre chamados, usuários, histórico e avaliações, além da IA integrada às sugestões e classificações automáticas.
+</p>
+
+<!-- Diagrama de Sequência -->
+<h3>Diagrama de Sequência</h3>
+<img src="imagens/diagrama de sequencia.jpg" alt="Diagrama de Sequência" class="imagem-interativa">
+<p>
+  O diagrama de sequência mostra o fluxo completo de um chamado: desde o login do usuário, passando pelo envio do problema, análise pela inteligência artificial, encaminhamento ao técnico e registro no banco de dados. Os principais participantes são:
+</p>
+<div class="info-bloco">
+  <p><strong>Usuário:</strong> envia o chamado pela interface do sistema.</p>
+  <p><strong>Interface:</strong> coleta dados e interage com o controlador.</p>
+  <p><strong>Controlador de Chamado:</strong> coordena as interações.</p>
+  <p><strong>Módulo IA:</strong> realiza classificação automática e sugere soluções.</p>
+  <p><strong>Gerenciador Técnico:</strong> atua em chamados não resolvidos automaticamente.</p>
+  <p><strong>Banco de Dados:</strong> registra e consulta todo o histórico.</p>
+</div>
+<p>
+  Esse fluxo mostra como a integração com IA otimizou a triagem e resposta, tornando o atendimento mais ágil e eficiente.
+</p>
+
+
+    <section id="bd">
+  <h2>Banco de Dados</h2>
+
+  <p>
+    O sistema utiliza um <strong>banco de dados relacional</strong> estruturado no Microsoft SQL Server, garantindo alta compatibilidade com a infraestrutura da CallSys. A modelagem foi feita com tabelas normalizadas, procedures, dicionário de dados e scripts que asseguram a integridade, segurança, desempenho e escalabilidade do sistema.
+  </p>
+
+  <p>
+    O projeto considera integralmente a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>, incluindo controle de consentimento, anonimização de dados sensíveis e registros detalhados em logs para rastreabilidade e auditoria, reforçando a segurança e a conformidade legal.
+  </p>
+
+  <p style="margin-top: 1.5rem;"><strong>Modelo Entidade-Relacionamento (DER):</strong></p>
+
+  <img src="imagens/bd diagrama relacional.png" alt="Modelo relacional do banco de dados"class="imagem-interativa">
+
+  <p>
+    O banco foi projetado para permitir versionamento e controle de acesso com base em perfis, além de suportar a integração com recursos de <strong>Inteligência Artificial (IA)</strong>, que auxiliam na categorização automática de chamados e sugestão de soluções.
+  </p>
+
+  <p>
+    A seguir, as principais tabelas e suas funções no sistema:
+  </p>
+
+  <div class="valores-grid">
+    <div class="card">
+      <h3>USUARIO</h3>
+      <p>Armazena dados pessoais e profissionais, como nome, e-mail, departamento e cargo (cliente, técnico ou administrador). Contém campos para controle de consentimento e anonimização conforme LGPD. <br><strong>Chave primária:</strong> ID_USUARIO</p>
+    </div>
+    <div class="card">
+      <h3>CATEGORIA</h3>
+      <p>Classifica os tipos de chamados, como hardware ou software, permitindo múltiplas soluções vinculadas por categoria. <br><strong>Chave primária:</strong> ID_CATEGORIA</p>
+    </div>
+    <div class="card">
+      <h3>CHAMADO</h3>
+      <p>Registra os chamados técnicos com título, descrição, datas de abertura e solução, status e prioridade, relacionando solicitante e responsável. <br><strong>Chave primária:</strong> ID_CHAMADO <br><strong>Chaves estrangeiras:</strong> ID_USUARIO (solicitante e responsável), ID_CATEGORIA</p>
+    </div>
+    <div class="card">
+      <h3>SOLUCAO_IA</h3>
+      <p>Armazena soluções automatizadas geradas pela IA, associadas às categorias via palavras-chave semânticas. <br><strong>Chave estrangeira:</strong> ID_CATEGORIA</p>
+    </div>
+    <div class="card">
+      <h3>HISTORICO_CHAMADO</h3>
+      <p>Registra todas as ações realizadas em um chamado ao longo do tempo, garantindo rastreabilidade e controle. <br><strong>Chaves estrangeiras:</strong> ID_CHAMADO, ID_USUARIO</p>
+    </div>
+    <div class="card">
+      <h3>AVALIACAO</h3>
+      <p>Permite feedback dos usuários sobre o atendimento, incluindo nível de satisfação e descrição. <br><strong>Chave estrangeira:</strong> ID_CHAMADO</p>
+    </div>
+  </div>
+
+  <div style="margin-top: 2.5rem;">
+  <h3>Relacionamentos entre as Tabelas</h3>
+  <div class="info-bloco" style="margin-top: 1rem; line-height: 1.8;">
+    <p><strong>USUARIO</strong> abre vários <strong>CHAMADOS</strong> (1:N)</p>
+    <p><strong>CHAMADO</strong> pertence a uma única <strong>CATEGORIA</strong> (N:1)</p>
+    <p><strong>CATEGORIA</strong> possui várias <strong>SOLUCOES_IA</strong> (1:N)</p>
+    <p><strong>CHAMADO</strong> tem diversos <strong>HISTORICOS</strong> (1:N)</p>
+    <p><strong>CHAMADO</strong> recebe uma única <strong>AVALIACAO</strong> (1:1)</p>
+  </div>
+</div>
+
+    <p style="margin-top: 1rem;">
+      Os relacionamentos são implementados por meio de <strong>chaves estrangeiras</strong>, assegurando integridade referencial e coesão entre as entidades.
+    </p>
+
+    <p>
+      Além disso, o banco conta com <strong>procedures</strong> para operações críticas, como abertura e resolução de chamados, garantindo consistência e registro automático das ações no histórico.
+    </p>
+
+    <p>
+      Um rigoroso <strong>plano de backup</strong> está em vigor, com backups completos diários e incrementais para tabelas críticas, armazenados em nuvem e servidores locais redundantes, assegurando a disponibilidade e recuperação dos dados.
+    </p>
+
+    <p>
+      As consultas SQL incluem verificações para usuários com consentimento, dados anonimizados e média de satisfação, facilitando a análise gerencial e o atendimento a requisitos legais.
+    </p>
+  </div>
+</section>
+
+
+      <section id="ia" aria-labelledby="titulo-ia">
+  <div class="container">
+    <h2 id="titulo-ia">Integração com Inteligência Artificial no Sistema de Gestão de Chamados</h2>
+
+    <p>
+      A aplicação da <strong>Inteligência Artificial (IA)</strong> no sistema de gestão de chamados visa modernizar o atendimento técnico interno, automatizando tarefas rotineiras e contribuindo para uma resposta mais rápida e eficaz às demandas dos colaboradores.
+      Integrada diretamente à estrutura do banco de dados, a IA realiza triagem inicial, classificação de prioridade e sugestão de soluções com base em ocorrências anteriores.
+    </p>
+    <p>
+      Essa abordagem otimiza o tempo, aumenta a eficiência operacional e respeita os princípios de <strong>transparência</strong> e <strong>confiabilidade</strong> exigidos em projetos corporativos.
+    </p>
+
+    <h3>Aplicação do NLP na Triagem de Chamados</h3>
+    <p>
+      O <abbr title="Processamento de Linguagem Natural">NLP</abbr> interpreta as descrições inseridas pelos usuários ao abrir um chamado. Com base em palavras-chave, a IA associa o problema a uma <strong>categoria</strong> registrada na tabela <code>CATEGORIA</code>. Essa ação ocorre antes da gravação final, integrada à <code>procedure AbrirChamado</code>.
+    </p>
+
+    <h3>Classificação Automática de Prioridade</h3>
+<p>
+  Após a compreensão da descrição, a IA classifica automaticamente o chamado em três níveis de prioridade:
+</p>
+<div class="info-bloco">
+  <p><strong>Prioridade A:</strong> Impacto crítico – até 2 dias úteis</p>
+  <p><strong>Prioridade B:</strong> Impacto moderado – até 7 dias úteis</p>
+  <p><strong>Prioridade C:</strong> Baixo impacto – até 15 dias úteis</p>
+</div>
+
+    <p>
+      A classificação é gravada no campo <code>PRIORIDADE</code> da tabela <code>CHAMADO</code>, assegurando padronização no atendimento.
+    </p>
+
+    <h3>Geração de Soluções com Base no Histórico</h3>
+    <p>
+      Identificada a categoria, a IA consulta a tabela <code>SOLUCAO_IA</code> com soluções aplicadas anteriormente, inseridas manualmente ou treinadas com base no <code>HISTORICO_CHAMADO</code>. O objetivo é oferecer uma sugestão imediata e relevante.
+    </p>
+
+    <h3>Base de Dados para Treinamento</h3>
+    <p>
+      A IA utiliza dados das tabelas <code>CHAMADO</code>, <code>HISTORICO_CHAMADO</code> e <code>AVALIACAO</code> para seu treinamento, permitindo identificar padrões, tempos de resposta e efetividade das soluções aplicadas.
+    </p>
+
+    <h3>Fluxo Operacional da IA no Sistema</h3>
+    <ol>
+      O usuário descreve o problema via web, desktop ou mobile.</li>
+      A IA interpreta o texto (NLP) e define a <strong>categoria</strong> e <strong>prioridade</strong>.</li>
+      O sistema consulta <code>SOLUCAO_IA</code> e apresenta sugestões.</li>
+      Se resolvido, o chamado é encerrado; caso contrário, segue para <code>AbrirChamado</code>.</li>
+    </ol>
+
+    <h3>Aprendizado Contínuo e Validação</h3>
+    <p>
+      A IA é atualizada continuamente com novos dados e feedbacks. Técnicos validam ou ajustam as sugestões, garantindo qualidade e alinhamento com os processos reais da empresa.
+    </p>
+
+<h3>Aplicação Prática da IA</h3>
+<div class="info-bloco">
+  <p><strong>Entrada do usuário:</strong> Título e descrição do problema.</p>
+  <p><strong>NLP:</strong> Identifica termos como "erro de impressão" ou "sistema travado".</p>
+  <p><strong>Classificação:</strong> Categoria e prioridade definidas automaticamente.</p>
+  <p><strong>Sugestão de solução:</strong> Exibida antes da abertura do chamado.</p>
+  <p><strong>Decisão do usuário:</strong> Encerrar ou prosseguir com o chamado via <code>AbrirChamado</code>.</p>
+</div>
+
+
+    <h4>Exemplo técnico (resumido):</h4>
+    <pre><code>
+IF descricao LIKE '%não imprime%' THEN
+    SET prioridade = 'M'; -- Média urgência
+    SET categoria = 'Hardware';
+    </code></pre>
+<h3>Integração com o Banco de Dados</h3>
+<div class="info-bloco">
+  <p><code>CHAMADO:</code> Registro do problema</p>
+  <p><code>CATEGORIA:</code> Definida via NLP</p>
+  <p><code>PRIORIDADE:</code> Classificação automatizada</p>
+  <p><code>SOLUCAO_IA:</code> Sugestão de solução</p>
+  <p><code>HISTORICO_CHAMADO:</code> Rastreabilidade das decisões</p>
+</div>
+
+    <p>
+      Esse modelo garante que a IA funcione como um <strong>módulo complementar</strong>, inteligente e escalável, mantendo a estrutura do sistema coesa e sustentável.
+    </p>
+
+    <!-- Imagem opcional -->
+    <!-- <img src="imagens/fluxo-ia.png" alt="Fluxo da IA no sistema"> -->
+  </div>
+</section>
+
+
+      <section id="prototipo">
+  <h2>Protótipo de Interface</h2>
+
+  <h3>Web e Desktop</h3>
+  <p>
+    O protótipo da interface web e desktop foi desenvolvido com foco na navegação simplificada e moderna, pensado especialmente para uso em notebooks e computadores. O design prioriza a clareza das informações, a facilidade de acesso aos recursos e a organização visual para garantir uma experiência intuitiva.
+  </p>
+
+  <p><strong>Página inicial:</strong> Tela de boas-vindas com acesso rápido às funcionalidades principais.</p>
+  <img src="imagens/Pagina inicial.png" alt="Página inicial do sistema"class="imagem-interativa">
+
+  <p><strong>Tela de login:</strong> Interface segura para autenticação dos usuários e controle de acesso por perfil.</p>
+  <img src="imagens/tela de login.png" alt="Tela de login"class="imagem-interativa">
+
+  <p><strong>Portal Help Desk:</strong> Painel central do sistema, onde o usuário acessa os recursos disponíveis, como abertura e acompanhamento de chamados.</p>
+  <img src="imagens/portal helpdesk.png" alt="Portal Help Desk"class="imagem-interativa">
+
+  <p><strong>Tela de chamados abertos:</strong> Listagem dinâmica dos chamados em andamento, com status, prioridade e prazo de resolução.</p>
+  <img src="imagens/tela de chamados em aberto.png" alt="Tela de chamados abertos"class="imagem-interativa">
+
+  <p>
+    Uma interface fácil e intuitiva é crucial no mundo digital. Ela melhora a experiência do usuário, aumenta a eficiência operacional, promove a acessibilidade e representa um diferencial competitivo. No sistema Kathlon, priorizamos um design limpo e funcional, garantindo que os usuários consigam realizar suas atividades com o mínimo de esforço. Nosso objetivo é oferecer uma navegação fluida, eficiente e agradável, fortalecendo a fidelidade e a satisfação dos usuários.
+  </p>
+
+  <h3>Mobile</h3>
+  <p>
+    A versão mobile do sistema foi desenvolvida com design responsivo, adaptando-se a diferentes tamanhos de tela, como smartphones e tablets. O objetivo é garantir a continuidade do atendimento, mesmo fora do ambiente de trabalho, com praticidade e agilidade.
+  </p>
+
+  <p><strong>Tela de início do usuário:</strong> Apresenta um resumo das funções disponíveis, como abertura de chamado, notificações e histórico.</p>
+  <img src="imagens/tela de inicio do usuario.png" alt="Tela de início do usuário no mobile"class="imagem-interativa">
+
+  <h3>Ferramentas Utilizadas</h3>
+<p>
+  Durante a elaboração do protótipo, utilizamos diversas ferramentas para design, organização e desenvolvimento:
+</p>
+<div class="info-bloco">
+  <p><strong>Figma:</strong> Criação de protótipos de alta fidelidade para interface web e mobile.</p>
+  <p><strong>Canva:</strong> Apoio visual para criação de elementos gráficos.</p>
+  <p><strong>Trello:</strong> Gerenciamento de tarefas e organização do projeto em equipe.</p>
+  <p><strong>Visual Studio Code:</strong> Ambiente de desenvolvimento utilizado para implementação inicial e integração com código.</p>
+</div>
+
+
+  <h3>Considerações sobre UX (Experiência do Usuário)</h3>
+  <p>
+    Uma boa Experiência do Usuário (UX) é o principal objetivo da equipe Kathlon. Nosso sistema foi projetado com foco na facilidade de uso tanto para os colaboradores quanto para os usuários finais. Isso inclui a clareza dos menus, consistência visual, resposta rápida e acessibilidade. Buscamos constantemente o equilíbrio entre estética e funcionalidade, para garantir que cada interação no sistema seja satisfatória, produtiva e descomplicada.
+  </p>
+</section>
+
+
+      <section id="manual">
+  <h2>Manual do Usuário</h2>
+
+  <h3>Acesso ao Sistema</h3>
+  <p>
+    O acesso ao sistema é realizado por meio de login com e-mail corporativo e senha pessoal. Essa autenticação garante segurança e controle de acesso aos recursos conforme o perfil do usuário.
+  </p>
+  <img src="imagens/manual de uso 4.jpg" alt="Tela de login - Acesso ao sistema"class="imagem-interativa">
+
+  <h3>Telas por Perfil</h3>
+<p>
+  O sistema apresenta interfaces distintas de acordo com o perfil do usuário:
+</p>
+<div class="info-bloco">
+  <p><strong>Cliente:</strong> Pode abrir novos chamados, acompanhar o andamento e visualizar o histórico de atendimentos.</p>
+  <p><strong>Técnico:</strong> Visualiza a fila de chamados atribuídos, atualiza o status, registra ações realizadas e finaliza atendimentos.</p>
+  <p><strong>Administrador:</strong> Possui acesso às funções de gestão de usuários, configuração do sistema e emissão de relatórios analíticos.</p>
+</div>
+
+
+  <p><strong>Tela do cliente:</strong></p>
+  <img src="imagens/manual de uso 5.jpg" alt="Tela do cliente"class="imagem-interativa">
+
+  <p><strong>Tela do técnico:</strong></p>
+  <img src="imagens/manual de uso 6.jpg" alt="Tela do técnico"class="imagem-interativa">
+
+  <!-- Dica: talvez você queira usar imagens diferentes para cliente e técnico -->
+
+  <h3>Fluxos e Funcionalidades</h3>
+<p>
+  A seguir, os principais fluxos e funcionalidades disponíveis no sistema:
+</p>
+
+<div class="info-bloco">
+  <p><strong>Abertura de Chamado:</strong> Os clientes podem registrar seus problemas através de canais como e-mail, telefone ou chat. O sistema cria um ticket e o direciona para análise técnica.</p>
+  
+  <p><strong>Priorização e Atribuição:</strong> A triagem utiliza critérios de urgência e gravidade, com auxílio de inteligência artificial, para classificar e encaminhar os chamados aos técnicos apropriados.</p>
+  
+  <p><strong>Análise e Resolução:</strong> Os técnicos acessam os detalhes do chamado, consultam a base de conhecimento e interagem com o solicitante até a resolução do problema.</p>
+  
+  <p><strong>Acompanhamento em Tempo Real:</strong> Os clientes podem visualizar o progresso do atendimento, e os técnicos registram observações, atualizações e status do chamado.</p>
+  
+  <p><strong>Relatórios Gerenciais:</strong> O sistema gera relatórios com indicadores como tempo médio de resposta, taxa de resolução, nível de satisfação dos clientes, entre outros.</p>
+  
+  <p><strong>Integrações:</strong> Possibilidade de integração com sistemas externos (CRM, ERP etc.), otimizando o compartilhamento de informações e o atendimento ao cliente.</p>
+</div>
+
+  <h3>Ajuda e Contato</h3>
+  <p>
+    Para dúvidas, suporte técnico ou orientações básicas de uso, os usuários podem entrar em contato com a equipe de suporte da Kathlon através do e-mail:
+  </p>
+  <p><strong>kathlon.suportetecnico@gmail.com</strong></p>
+</section>
+
+<section id="testes">
+  <h2>Manual de Testes</h2>
+  <p>
+    A fase de testes desempenha um papel fundamental no processo de desenvolvimento de sistemas, pois permite validar os requisitos implementados, garantir a integridade dos dados e assegurar que o sistema funcione conforme o esperado em diferentes cenários de uso. Este manual apresenta os testes realizados na fase de homologação do sistema Kathlon, contendo os principais cenários de testes, consultas SQL para verificação dos dados, evidências, critérios de sucesso e explicações técnicas.
+  </p>
+
+<h3>Objetivos dos Testes</h3>
+<p>
+  Os testes de homologação têm como objetivo verificar se as funcionalidades críticas do sistema estão funcionando corretamente e conforme os requisitos estabelecidos. Também busca-se validar a persistência correta dos dados no banco, a consistência das operações e a conformidade com a LGPD.
+</p>
+
+<h3>Roteiro de Testes</h3>
+<div class="tabela-wrapper">
+  <table class="tabela-roteiro">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Funcionalidade</th>
+        <th>Ação</th>
+        <th>Resultado Esperado</th>
+        <th>SQL</th>
+        <th>Critério de Sucesso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="ID">TST-01</td>
+        <td data-label="Funcionalidade">Cadastro de Usuário</td>
+        <td data-label="Ação">Criar novo usuário com todos os dados preenchidos</td>
+        <td data-label="Resultado Esperado">Registro salvo com consentimento TRUE</td>
+        <td data-label="SQL">SELECT * FROM usuario WHERE email = 'teste@email.com';</td>
+        <td data-label="Critério de Sucesso">Usuário inserido com campo consentimento = 1</td>
+      </tr>
+      <tr>
+        <td data-label="ID">TST-02</td>
+        <td data-label="Funcionalidade">Abertura de Chamado</td>
+        <td data-label="Ação">Usuário abre chamado com categoria e prioridade</td>
+        <td data-label="Resultado Esperado">Chamado inserido com status 'Aberto'</td>
+        <td data-label="SQL">SELECT * FROM chamado WHERE id_usuario = X ORDER BY data_abertura DESC LIMIT 1;</td>
+        <td data-label="Critério de Sucesso">Status do chamado igual a 'Aberto'</td>
+      </tr>
+      <tr>
+        <td data-label="ID">TST-03</td>
+        <td data-label="Funcionalidade">Avaliação de Chamado</td>
+        <td data-label="Ação">Realizar avaliação com nota e comentário</td>
+        <td data-label="Resultado Esperado">Avaliação inserida vinculada ao chamado</td>
+        <td data-label="SQL">SELECT * FROM avaliacao WHERE id_chamado = Y;</td>
+        <td data-label="Critério de Sucesso">Avaliação registrada corretamente</td>
+      </tr>
+      <tr>
+        <td data-label="ID">TST-04</td>
+        <td data-label="Funcionalidade">Anonimização de Dados</td>
+        <td data-label="Ação">Ativar anonimização após revogação</td>
+        <td data-label="Resultado Esperado">Campo 'anonimizado' alterado para TRUE</td>
+        <td data-label="SQL">SELECT anonimizado FROM usuario WHERE id_usuario = X;</td>
+        <td data-label="Critério de Sucesso">Valor do campo igual a 1</td>
+      </tr>
+      <tr>
+        <td data-label="ID">TST-05</td>
+        <td data-label="Funcionalidade">Geração de Solução IA</td>
+        <td data-label="Ação">Descrever chamado com palavras-chave IA</td>
+        <td data-label="Resultado Esperado">Solução sugerida automaticamente</td>
+        <td data-label="SQL">SELECT * FROM solucao_ia WHERE palavras_chave LIKE '%senha%';</td>
+        <td data-label="Critério de Sucesso">Solução retornada via IA</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <h3>Evidências e Critérios de Sucesso</h3>
+<p>
+  Durante a execução dos testes, foram realizadas capturas de tela e exportações do banco de dados como evidência de homologação. Os testes foram considerados bem-sucedidos quando os resultados esperados coincidiram com os dados finais persistidos no sistema, sem erros de validação e com as regras de negócio respeitadas.
+</p>
+
+<h3>Garantia da Funcionalidade Mínima</h3>
+<p>
+  Os testes demonstraram que o sistema Kathlon possui funcionalidade mínima para operar em ambiente real. O correto funcionamento das funções essenciais garante a conformidade legal, segurança e rastreabilidade das operações.
+</p>
+
+<h3>Evidências e Critérios de Sucesso</h3>
+<p>
+  Durante a execução dos testes, foram realizadas capturas de tela e exportações do banco de dados como evidência de homologação. Os testes foram considerados bem-sucedidos quando os resultados esperados coincidiram com os dados finais persistidos no sistema, sem erros de validação e com as regras de negócio respeitadas.
+</p>
+
+<h3>Garantia da Funcionalidade Mínima</h3>
+<p>
+  Os testes demonstraram que o sistema Kathlon possui funcionalidade mínima para operar em ambiente real. O correto funcionamento das funções essenciais garante a conformidade legal, segurança e rastreabilidade das operações.
+</p>
+
+<h3>Evidências dos Testes (Simuladas)</h3>
+
+<div class="evidencias-teste">
+
+  <h4>Evidência 1 - Cadastro de usuário com consentimento:</h4>
+  <table class="tabela-evidencias">
+    <thead>
+      <tr>
+        <th>id_usuario</th><th>nome</th><th>email</th><th>consentimento</th><th>anonimizado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="id_usuario">12</td>
+        <td data-label="nome">João Silva</td>
+        <td data-label="email">joao@email.com</td>
+        <td data-label="consentimento">1</td>
+        <td data-label="anonimizado">0</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Evidência 2 - Chamado aberto com status correto:</h4>
+  <table class="tabela-evidencias">
+    <thead>
+      <tr>
+        <th>id_chamado</th><th>id_usuario</th><th>categoria</th><th>prioridade</th><th>status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="id_chamado">101</td>
+        <td data-label="id_usuario">12</td>
+        <td data-label="categoria">Hardware</td>
+        <td data-label="prioridade">A</td>
+        <td data-label="status">Aberto</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Evidência 3 - Avaliação registrada corretamente:</h4>
+  <table class="tabela-evidencias">
+    <thead>
+      <tr>
+        <th>id_avaliacao</th><th>id_chamado</th><th>nota</th><th>comentario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="id_avaliacao">55</td>
+        <td data-label="id_chamado">101</td>
+        <td data-label="nota">5</td>
+        <td data-label="comentario">Ótimo atendimento, rápido e eficiente.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>Evidência 4 - Anonimização de dados:</h4>
+  <table class="tabela-evidencias">
+    <thead>
+      <tr>
+        <th>id_usuario</th><th>consentimento</th><th>anonimizado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td data-label="id_usuario">12</td>
+        <td data-label="consentimento">0</td>
+        <td data-label="anonimizado">1</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+
+<section id="implantacao">
+  <h2>Plano de Implantação do Sistema</h2>
+  <p>
+    A implantação do sistema Kathlon será realizada em ambiente corporativo com arquitetura cliente-servidor. O banco de dados será o Microsoft SQL Server, hospedado em servidor dedicado com disponibilidade 24h. O sistema será acessado via web, desktop e mobile, com sincronização total entre as plataformas.
+  </p>
+
+  <h3>Requisitos de Hardware e Software</h3>
+<table class="tabela-requisitos">
+  <thead>
+    <tr>
+      <th>Requisito</th>
+      <th>Especificação</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Sistema Operacional (Servidor)</td><td>Windows Server 2019 ou superior</td></tr>
+    <tr><td>Servidor de Banco de Dados</td><td>Microsoft SQL Server 2019</td></tr>
+    <tr><td>Linguagem de Programação</td><td>C#</td></tr>
+    <tr><td>Tecnologias</td><td>ASP.NET (Web), Windows Forms/WPF (Desktop), Android (Mobile)</td></tr>
+    <tr><td>Framework de IA</td><td>OpenAI, IBM Watson ou Azure AI</td></tr>
+    <tr><td>Navegadores Compatíveis</td><td>Chrome, Edge, Firefox</td></tr>
+    <tr><td>Memória RAM (mínimo)</td><td>4 GB</td></tr>
+    <tr><td>Processador</td><td>Intel i3 ou superior</td></tr>
+    <tr><td>Armazenamento</td><td>50 GB de espaço livre</td></tr>
+    <tr><td>Android Compatível</td><td>Versão 8.0 ou superior</td></tr>
+    <tr><td>Conexão de Internet</td><td>Obrigatória para todas as plataformas</td></tr>
+  </tbody>
+</table>
+
+
+  <h3>Portabilidade e Acesso</h3>
+  <p>
+    A portabilidade do sistema Kathlon é garantida por seu desenvolvimento multiplataforma. A versão web é compatível com os principais navegadores e pode ser acessada pelo endereço oficial: 
+    https://www.chamadoCallSys.com.br</a>. 
+    O sistema desktop exige instalação prévia por meio de pacote fornecido pela equipe de TI. Já a versão mobile poderá ser instalada da mesma forma ou acessada diretamente pela web. 
+    Todos os módulos acessam o mesmo banco de dados, garantindo a atualização e consistência das informações em tempo real. 
+    O acesso ao sistema é feito mediante autenticação com e-mail corporativo e senha, garantindo segurança e controle sobre os usuários.
+  </p>
+</section>
+
+
+      <section id="contato">
+        <h2>Informações Acadêmicas</h2>
+        <p><strong>Curso:</strong> Análise e Desenvolvimento de Sistemas - UNIP</p>
+        <p><strong>Semestre:</strong> 3º - 2025</p>
+        <p><strong>Orientadora:</strong> Prof.ª Gislaine</p>
+        <p><strong>Integrantes:</strong> Rafael Lacerda, Nicolas, Khalil, Matheus, Nicole, Guilherme</p>
+        <p><strong>Email:</strong> kathlon.suporttecnico@gmail.com</p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 - Projeto Acadêmico Kathlon - UNIP</p>
+    </footer>
+  </div>
+
+  
+  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-topo">↑</button>
+  
+   <!-- JavaScript externo -->
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  
+
+
+</body>
+</html>
