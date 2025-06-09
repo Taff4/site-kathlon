@@ -15,7 +15,7 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Inter', sans-serif;
   background-color: var(--cinza-claro);
   color: var(--preto);
   scroll-behavior: smooth;
@@ -92,10 +92,12 @@ header {
 }
 
 main {
-  padding: 2rem;
-  max-width: 1000px;
-  margin: auto;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: var(--cinza-claro); /* ou branco, como quiser */
 }
+
 
 section {
   margin-bottom: 3rem;
@@ -129,6 +131,7 @@ section p {
   justify-content: space-between;
   margin-top: 2rem;
 }
+
 
 .card {
   flex: 1 1 calc(33.333% - 1rem); /* 3 por linha com espaçamento */
@@ -259,7 +262,7 @@ section p {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .splash-grid {
     display: flex;
     flex-direction: column;
@@ -302,7 +305,7 @@ section p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .valores-grid,
   .funcionalidades-grid {
     flex-direction: column;
@@ -333,7 +336,7 @@ img {
 }
 
 /* Responsivo */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar a {
     display: block;
     margin: 0.5rem 0;
@@ -425,7 +428,7 @@ img {
 }
 
 /* Navbar responsiva */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar {
     flex-direction: column;
   }
@@ -462,7 +465,7 @@ img {
 }
 
 /* Responsividade Mobile */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .imagem-interativa {
     max-width: 100%;     /* usa toda a largura disponível no mobile */
     margin: 1rem auto;   /* margem reduzida para telas pequenas */
@@ -515,7 +518,7 @@ main section {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .menu-button {
     display: block;
     position: fixed;
@@ -532,20 +535,19 @@ main section {
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
-  width: 100vw; /* ← DE 80vw PARA 100vw */
+  bottom: 0; /* ← garante que cubra a altura total da tela */
+  width: 100vw;
   background: var(--azul-escuro);
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* ← força layout vertical */
   justify-content: flex-start;
-  align-items: center;   /* ← centraliza os links */
+  align-items: center;
   padding: 2rem 1rem;
   transform: translateX(100%);
   transition: transform 0.3s ease;
   box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
   z-index: 1001;
   overflow-y: auto;
-  max-height: 100vh;
 }
 
 
@@ -553,17 +555,18 @@ main section {
     transform: translateX(0);
   }
 
-  .navbar a {
-    margin-bottom: 0.8rem;
-    font-size: 0.95rem;
-    color: white;
-    font-weight: 500;
-    text-decoration: none;
-    transition: background 0.2s ease, color 0.2s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    width: 100%;
-  }
+ .navbar a {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  width: 100%; /* ← cada link ocupa uma linha inteira */
+  text-align: center;
+}
 
   .navbar a:hover {
     background-color: var(--azul-claro); /* verde suave */
@@ -693,7 +696,7 @@ h4 {
 
 /* Responsividade para dispositivos móveis */
 
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   .tabela-evidencias, .tabela-evidencias thead, .tabela-evidencias tbody, .tabela-evidencias th, .tabela-evidencias td, .tabela-evidencias tr {
     display: block;
   }
@@ -842,7 +845,8 @@ h4 {
 }
 
 /* Só aparece se for ativado e estiver em tela mobile */
-@media (max-width: 768px) {
+/* Dentro do @media */
+@media (max-width: 992px) {
   .menu-overlay.active {
     display: block;
     position: fixed;
@@ -855,6 +859,7 @@ h4 {
   }
 }
 
+/* Fora do @media */
 .menu-close {
   align-self: flex-end;
   background: none;
@@ -865,46 +870,32 @@ h4 {
   cursor: pointer;
 }
 
-#sistema {
-  background-color: #f5fafe; /* fundo azul-claro da seção */
-  padding: 4rem 2rem;
-}
 
-#sistema .bloco-branco {
-  background-color: white;
-  border-radius: 12px;
-  padding: 2rem;
+#sistema {
+  background-color: #ffffff; /* mesmo fundo das outras seções */
+  padding: 4rem 2rem;
+  border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 3rem;
 }
 
 #btn-topo {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  width: 44px;
-  height: 44px;
-  background: var(--azul-verde);
-  color: white;
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  background: #ffffff;
   border: none;
   border-radius: 50%;
-  font-size: 1.4rem;
-  font-weight: bold;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   cursor: pointer;
-  z-index: 900;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-
-#btn-topo.mostrar {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  transition: transform 0.3s ease;
 }
 
 #btn-topo:hover {
   transform: scale(1.1);
-  background-color: var(--azul-claro);
+  background-color: #f0f0f0;
+}
+footer {
+  position: relative;
 }
