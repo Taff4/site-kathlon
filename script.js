@@ -27,24 +27,26 @@ function enterSite() {
   animarSplash(); // reutiliza a animação principal
 }
 
-// Botão de menu responsivo (hambúrguer)
+/**/ //Botão de menu responsivo (hambúrguer)
 function toggleMenu() {
   const navbar = document.querySelector('.navbar');
   const overlay = document.querySelector('.menu-overlay');
 
-  navbar.classList.toggle('open');
-
-  // Só mostra overlay no mobile
-  if (window.innerWidth <= 768) {
-    if (navbar.classList.contains("open")) {
-      overlay.classList.add("active");
-    } else {
-      overlay.classList.remove("active");
+  if (window.innerWidth <= 992) {
+    if (!navbar.classList.contains('open')) {
+      // Atualiza a posição top da navbar para onde o scroll está
+      navbar.style.top = `${window.scrollY}px`;
     }
+
+    navbar.classList.toggle('open');
+    overlay.classList.toggle('active');
   } else {
-    overlay.classList.remove("active");
+    // Desktop
+    navbar.classList.toggle('open');
+    overlay.classList.remove('active');
   }
 }
+
 
 
 // Fecha o menu ao clicar em qualquer link
