@@ -6,6 +6,8 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="icon" href="imagens/logo-kathlon.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
 </head>
 <body>
 
@@ -34,7 +36,12 @@
           <p class="white-text">Sistema de Chamados Inteligente</p>
         </div>
         <!-- Botão de menu responsivo -->
-        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">☰</button>
+        <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu de navegação">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+    <path d="M3 6h18M3 12h18M3 18h18" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+</button>
+
       </div>
 
       <nav class="navbar">
@@ -122,8 +129,9 @@
 
         <!-- <img src="imagens/empresa.png" alt="Imagem da empresa"> -->
 
+<!-- SEÇÃO: SISTEMA KATHLON -->
 <section id="sistema" class="layout-colunas" aria-labelledby="titulo-sistema">
-  <div class="bloco-branco">
+  <div class="container">
     <h2 id="titulo-sistema">O Sistema Kathlon</h2>
     <p>
       A proposta do <strong>sistema Kathlon</strong> é permitir que os colaboradores da empresa registrem e acompanhem seus chamados técnicos por meio de uma plataforma web e mobile com suporte a <abbr title="Inteligência Artificial">IA</abbr>.
@@ -141,204 +149,157 @@
       </div>
       <div class="card fade-scroll">
         <h3>Valores</h3>
-        <ul>
-          <p>Inovação, Transparência, Segurança da Informação, Compromisso com Resultados</p>
-        </ul>
+        <p>Inovação, Transparência, Segurança da Informação, Compromisso com Resultados</p>
       </div>
     </div>
 
+    <!-- Funcionalidades -->
     <div class="fade-scroll">
       <h3>Funcionalidades</h3>
-    <!-- Funcionalidades -->
-    <div class="funcionalidades-grid">
-      <div class="card fade-scroll">
-        <h3>Cadastro Inteligente</h3>
-        <p>Cadastro e triagem automática de chamados.</p>
-      </div>
-      <div class="card fade-scroll">
-        <h3>Gestão Técnica</h3>
-        <p>Controle de status e atribuição técnica.</p>
-      </div>
-      <div class="card fade-scroll">
-        <h3>Relatórios e Histórico</h3>
-        <p>Geração de relatórios e acompanhamento completo.</p>
-      </div>
-      <div class="card fade-scroll">
-        <h3>Soluções com IA</h3>
-        <p>Classificação e recomendação de soluções com apoio de IA.</p>
+      <div class="funcionalidades-grid">
+        <div class="card fade-scroll">
+          <h3>Cadastro Inteligente</h3>
+          <p>Cadastro e triagem automática de chamados.</p>
+        </div>
+        <div class="card fade-scroll">
+          <h3>Gestão Técnica</h3>
+          <p>Controle de status e atribuição técnica.</p>
+        </div>
+        <div class="card fade-scroll">
+          <h3>Relatórios e Histórico</h3>
+          <p>Geração de relatórios e acompanhamento completo.</p>
+        </div>
+        <div class="card fade-scroll">
+          <h3>Soluções com IA</h3>
+          <p>Classificação e recomendação de soluções com apoio de IA.</p>
+        </div>
       </div>
     </div>
-    </div>
-    
+
     <!-- Regras de Negócio -->
     <div class="regras-negocio fade-scroll">
-  <h3>Regras de Negócio</h3>
+      <h3>Regras de Negócio</h3>
+      <div class="info-bloco">
+        <p><strong>Classificação automatizada:</strong> Utiliza IA para triagem e redirecionamento com base no perfil técnico.</p>
+        <p><strong>Controle de acesso:</strong> Perfis definidos como Cliente, Técnico e Administrador, com permissões específicas.</p>
+        <p><strong>Conformidade com a LGPD:</strong> Consentimento explícito, anonimização e registro de operações garantem aderência.</p>
+        <p><strong>Rastreabilidade total:</strong> Todas as ações realizadas no sistema são registradas.</p>
+        <p><strong>Multiplataforma:</strong> Acesso seguro por web, desktop e mobile com autenticação por e-mail e senha.</p>
+      </div>
+    </div>
 
-  <div class="info-bloco">
-    <p><strong>Classificação automatizada:</strong> Utiliza IA para triagem e redirecionamento com base no perfil técnico.</p>
-    <p><strong>Controle de acesso:</strong> Perfis definidos como Cliente, Técnico e Administrador, com permissões específicas para cada um.</p>
-    <p><strong>Conformidade com a LGPD:</strong> Consentimento explícito, anonimização e registro de operações garantem aderência à legislação.</p>
-    <p><strong>Rastreabilidade total:</strong> Todas as ações realizadas no sistema são registradas no histórico do chamado.</p>
-    <p><strong>Multiplataforma:</strong> Acesso seguro por web, desktop e mobile com autenticação baseada em e-mail e senha corporativos.</p>
-  </div>
-</div>
-
-
-    <!-- Resultados e ROI -->
+    <!-- Impacto e ROI -->
     <div class="resultados-roi fade-in">
       <h3>Impacto e Retorno</h3>
       <p>
-        Com a substituição do atendimento manual por um sistema inteligente, a CallSys reduziu custos em mais de <strong>R$ 4,7 milhões anuais</strong> e obteve um <strong>ROI de 9.296%</strong>. O tempo médio de resolução de chamados caiu de 8 horas para apenas 10 minutos.
+        A CallSys reduziu custos em mais de <strong>R$ 4,7 milhões anuais</strong> e obteve um <strong>ROI de 9.296%</strong>. O tempo médio de resolução caiu de 8 horas para 10 minutos.
       </p>
     </div>
 
-    <!-- Estrutura da KATHLON -->
-   <div class="fade-in">
-  <h3>Estrutura da KATHLON</h3>
-  <p>
-    Nossa estrutura organizacional é composta por três núcleos principais:
-  </p>
-
-  <div class="info-bloco">
-    <p><strong>Análise de Sistemas</strong></p>
-    <p><strong>Desenvolvimento</strong></p>
-    <p><strong>Suporte ao Cliente</strong></p>
-  </div>
-
-  <p>
-    Para atender à CallSys, formamos uma equipe multidisciplinar com <strong>analistas de sistemas</strong>, <strong>desenvolvedores back-end e front-end</strong>, <strong>especialistas em banco de dados</strong> e <strong>designers de interface</strong>, garantindo qualidade em todas as etapas do projeto.
-  </p>
-</div>
-
-
-
-   <section id="uml">
-  <h2>Modelagem UML</h2>
-  <p>Foram desenvolvidos os diagramas de Casos de Uso, Classes e Sequência para representar e validar a estrutura e o funcionamento do sistema proposto.</p>
-
-  <!-- Diagrama de Caso de Uso -->
-  <h3>Diagrama de Caso de Uso</h3>
-  <img src="imagens/diagrama de caso de uso.png" alt="Casos de Uso"class="imagem-interativa">
-  <p>
-    O diagrama de caso de uso representa as interações dos usuários com o sistema, demonstrando funcionalidades como login, abertura de chamados, consulta ao histórico e avaliação de atendimentos. Isso ajuda a visualizar de forma simples quem faz o quê dentro do sistema.
-  </p>
-
-<!-- Diagrama de Classes -->
-<h3>Diagrama de Classes</h3>
-<img src="imagens/diagrama de classe.png" alt="Diagrama de Classes" class="imagem-interativa">
-<p>
-  O sistema foi planejado com uma arquitetura bem definida, cobrindo todo o ciclo do atendimento técnico. Cada classe tem uma responsabilidade específica, respeitando o princípio da responsabilidade única. Entre os principais componentes, temos:
-</p>
-<div class="info-bloco">
-  <p><strong>Sessão:</strong> controla login, autenticação e segurança.</p>
-  <p><strong>Usuário:</strong> gerencia dados, consentimento e privacidade.</p>
-  <p><strong>Chamado:</strong> lida com abertura, andamento e encerramento de solicitações.</p>
-  <p><strong>Categoria:</strong> classifica os chamados por área ou tipo.</p>
-  <p><strong>HistóricoChamado:</strong> registra toda a movimentação e ações de um chamado.</p>
-  <p><strong>SoluçãoIA:</strong> usa IA para sugerir soluções com base em chamados anteriores.</p>
-  <p><strong>Avaliação:</strong> coleta feedback do atendimento pelo usuário.</p>
-</div>
-<p>
-  Os relacionamentos entre as classes reforçam a coesão do sistema, com conexões claras entre chamados, usuários, histórico e avaliações, além da IA integrada às sugestões e classificações automáticas.
-</p>
-
-<!-- Diagrama de Sequência -->
-<h3>Diagrama de Sequência</h3>
-<img src="imagens/diagrama de sequencia.jpg" alt="Diagrama de Sequência" class="imagem-interativa">
-<p>
-  O diagrama de sequência mostra o fluxo completo de um chamado: desde o login do usuário, passando pelo envio do problema, análise pela inteligência artificial, encaminhamento ao técnico e registro no banco de dados. Os principais participantes são:
-</p>
-<div class="info-bloco">
-  <p><strong>Usuário:</strong> envia o chamado pela interface do sistema.</p>
-  <p><strong>Interface:</strong> coleta dados e interage com o controlador.</p>
-  <p><strong>Controlador de Chamado:</strong> coordena as interações.</p>
-  <p><strong>Módulo IA:</strong> realiza classificação automática e sugere soluções.</p>
-  <p><strong>Gerenciador Técnico:</strong> atua em chamados não resolvidos automaticamente.</p>
-  <p><strong>Banco de Dados:</strong> registra e consulta todo o histórico.</p>
-</div>
-<p>
-  Esse fluxo mostra como a integração com IA otimizou a triagem e resposta, tornando o atendimento mais ágil e eficiente.
-</p>
-
-
-    <section id="bd">
-  <h2>Banco de Dados</h2>
-
-  <p>
-    O sistema utiliza um <strong>banco de dados relacional</strong> estruturado no Microsoft SQL Server, garantindo alta compatibilidade com a infraestrutura da CallSys. A modelagem foi feita com tabelas normalizadas, procedures, dicionário de dados e scripts que asseguram a integridade, segurança, desempenho e escalabilidade do sistema.
-  </p>
-
-  <p>
-    O projeto considera integralmente a <strong>Lei Geral de Proteção de Dados (LGPD)</strong>, incluindo controle de consentimento, anonimização de dados sensíveis e registros detalhados em logs para rastreabilidade e auditoria, reforçando a segurança e a conformidade legal.
-  </p>
-
-  <p style="margin-top: 1.5rem;"><strong>Modelo Entidade-Relacionamento (DER):</strong></p>
-
-  <img src="imagens/bd diagrama relacional.png" alt="Modelo relacional do banco de dados"class="imagem-interativa">
-
-  <p>
-    O banco foi projetado para permitir versionamento e controle de acesso com base em perfis, além de suportar a integração com recursos de <strong>Inteligência Artificial (IA)</strong>, que auxiliam na categorização automática de chamados e sugestão de soluções.
-  </p>
-
-  <p>
-    A seguir, as principais tabelas e suas funções no sistema:
-  </p>
-
-  <div class="valores-grid">
-    <div class="card">
-      <h3>USUARIO</h3>
-      <p>Armazena dados pessoais e profissionais, como nome, e-mail, departamento e cargo (cliente, técnico ou administrador). Contém campos para controle de consentimento e anonimização conforme LGPD. <br><strong>Chave primária:</strong> ID_USUARIO</p>
+    <!-- Estrutura da Kathlon -->
+    <div class="fade-in">
+      <h3>Estrutura da KATHLON</h3>
+      <p>Nossa estrutura organizacional é composta por três núcleos principais:</p>
+      <div class="info-bloco">
+        <p><strong>Análise de Sistemas</strong></p>
+        <p><strong>Desenvolvimento</strong></p>
+        <p><strong>Suporte ao Cliente</strong></p>
+      </div>
+      <p>Equipe formada por analistas, desenvolvedores, especialistas em banco de dados e designers de interface.</p>
     </div>
-    <div class="card">
-      <h3>CATEGORIA</h3>
-      <p>Classifica os tipos de chamados, como hardware ou software, permitindo múltiplas soluções vinculadas por categoria. <br><strong>Chave primária:</strong> ID_CATEGORIA</p>
-    </div>
-    <div class="card">
-      <h3>CHAMADO</h3>
-      <p>Registra os chamados técnicos com título, descrição, datas de abertura e solução, status e prioridade, relacionando solicitante e responsável. <br><strong>Chave primária:</strong> ID_CHAMADO <br><strong>Chaves estrangeiras:</strong> ID_USUARIO (solicitante e responsável), ID_CATEGORIA</p>
-    </div>
-    <div class="card">
-      <h3>SOLUCAO_IA</h3>
-      <p>Armazena soluções automatizadas geradas pela IA, associadas às categorias via palavras-chave semânticas. <br><strong>Chave estrangeira:</strong> ID_CATEGORIA</p>
-    </div>
-    <div class="card">
-      <h3>HISTORICO_CHAMADO</h3>
-      <p>Registra todas as ações realizadas em um chamado ao longo do tempo, garantindo rastreabilidade e controle. <br><strong>Chaves estrangeiras:</strong> ID_CHAMADO, ID_USUARIO</p>
-    </div>
-    <div class="card">
-      <h3>AVALIACAO</h3>
-      <p>Permite feedback dos usuários sobre o atendimento, incluindo nível de satisfação e descrição. <br><strong>Chave estrangeira:</strong> ID_CHAMADO</p>
-    </div>
-  </div>
-
-  <div style="margin-top: 2.5rem;">
-  <h3>Relacionamentos entre as Tabelas</h3>
-  <div class="info-bloco" style="margin-top: 1rem; line-height: 1.8;">
-    <p><strong>USUARIO</strong> abre vários <strong>CHAMADOS</strong> (1:N)</p>
-    <p><strong>CHAMADO</strong> pertence a uma única <strong>CATEGORIA</strong> (N:1)</p>
-    <p><strong>CATEGORIA</strong> possui várias <strong>SOLUCOES_IA</strong> (1:N)</p>
-    <p><strong>CHAMADO</strong> tem diversos <strong>HISTORICOS</strong> (1:N)</p>
-    <p><strong>CHAMADO</strong> recebe uma única <strong>AVALIACAO</strong> (1:1)</p>
-  </div>
-</div>
-
-    <p style="margin-top: 1rem;">
-      Os relacionamentos são implementados por meio de <strong>chaves estrangeiras</strong>, assegurando integridade referencial e coesão entre as entidades.
-    </p>
-
-    <p>
-      Além disso, o banco conta com <strong>procedures</strong> para operações críticas, como abertura e resolução de chamados, garantindo consistência e registro automático das ações no histórico.
-    </p>
-
-    <p>
-      Um rigoroso <strong>plano de backup</strong> está em vigor, com backups completos diários e incrementais para tabelas críticas, armazenados em nuvem e servidores locais redundantes, assegurando a disponibilidade e recuperação dos dados.
-    </p>
-
-    <p>
-      As consultas SQL incluem verificações para usuários com consentimento, dados anonimizados e média de satisfação, facilitando a análise gerencial e o atendimento a requisitos legais.
-    </p>
   </div>
 </section>
+
+<!-- SEÇÃO: UML -->
+<section id="uml" class="layout-colunas" aria-labelledby="titulo-uml">
+  <div class="bloco-branco">
+    <h2 id="titulo-uml">Modelagem UML</h2>
+    <p>Foram desenvolvidos os diagramas de Casos de Uso, Classes e Sequência para representar a estrutura do sistema.</p>
+
+    <h3>Diagrama de Caso de Uso</h3>
+    <img src="imagens/diagrama de caso de uso.png" alt="Casos de Uso" class="imagem-interativa">
+    <p>O diagrama mostra as interações dos usuários com o sistema: login, abertura de chamados, histórico e avaliação.</p>
+
+    <h3>Diagrama de Classes</h3>
+    <img src="imagens/diagrama de classe.png" alt="Diagrama de Classes" class="imagem-interativa">
+    <p>O sistema foi planejado com uma arquitetura orientada a objetos, com classes coesas e responsabilidades claras.</p>
+
+    <div class="info-bloco">
+      <p><strong>Sessão:</strong> login e autenticação.</p>
+      <p><strong>Usuário:</strong> dados e consentimento.</p>
+      <p><strong>Chamado:</strong> abertura, andamento e encerramento.</p>
+      <p><strong>Categoria:</strong> classifica os chamados.</p>
+      <p><strong>HistóricoChamado:</strong> registra movimentações.</p>
+      <p><strong>SoluçãoIA:</strong> sugestões baseadas em IA.</p>
+      <p><strong>Avaliação:</strong> feedback do usuário.</p>
+    </div>
+
+    <h3>Diagrama de Sequência</h3>
+    <img src="imagens/diagrama de sequencia.jpg" alt="Diagrama de Sequência" class="imagem-interativa">
+    <p>Fluxo completo de um chamado: login, envio, análise pela IA, atendimento técnico e armazenamento.</p>
+
+    <div class="info-bloco">
+      <p><strong>Usuário:</strong> envia o chamado.</p>
+      <p><strong>Interface:</strong> coleta dados.</p>
+      <p><strong>Controlador:</strong> coordena o processo.</p>
+      <p><strong>IA:</strong> classifica e sugere soluções.</p>
+      <p><strong>Técnico:</strong> atua se não resolvido.</p>
+      <p><strong>Banco de Dados:</strong> registra tudo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO: BANCO DE DADOS -->
+<section id="bd" class="layout-colunas" aria-labelledby="titulo-bd">
+  <div class="bloco-branco">
+    <h2 id="titulo-bd">Banco de Dados</h2>
+    <p>Utiliza SQL Server com tabelas normalizadas, scripts e dicionário de dados, assegurando segurança, desempenho e LGPD.</p>
+
+    <h3>Modelo Entidade-Relacionamento</h3>
+    <img src="imagens/bd diagrama relacional.png" alt="Modelo relacional do banco de dados" class="imagem-interativa">
+    <p>Permite controle de acesso, versão, integração com IA e rastreabilidade total.</p>
+
+    <h3>Tabelas Principais</h3>
+    <div class="valores-grid">
+      <div class="card">
+        <h3>USUARIO</h3>
+        <p>Dados pessoais e profissionais, com consentimento e anonimização. PK: ID_USUARIO</p>
+      </div>
+      <div class="card">
+        <h3>CATEGORIA</h3>
+        <p>Classifica chamados. PK: ID_CATEGORIA</p>
+      </div>
+      <div class="card">
+        <h3>CHAMADO</h3>
+        <p>Registra chamados com relacionamentos e status. PK: ID_CHAMADO</p>
+      </div>
+      <div class="card">
+        <h3>SOLUCAO_IA</h3>
+        <p>Soluções automatizadas por IA. FK: ID_CATEGORIA</p>
+      </div>
+      <div class="card">
+        <h3>HISTORICO_CHAMADO</h3>
+        <p>Ações registradas no tempo. FK: ID_CHAMADO, ID_USUARIO</p>
+      </div>
+      <div class="card">
+        <h3>AVALIACAO</h3>
+        <p>Feedback dos usuários. FK: ID_CHAMADO</p>
+      </div>
+    </div>
+
+    <h3>Relacionamentos</h3>
+    <div class="info-bloco">
+      <p><strong>USUARIO</strong> abre vários <strong>CHAMADOS</strong> (1:N)</p>
+      <p><strong>CHAMADO</strong> pertence a uma <strong>CATEGORIA</strong> (N:1)</p>
+      <p><strong>CATEGORIA</strong> possui várias <strong>SOLUCOES_IA</strong> (1:N)</p>
+      <p><strong>CHAMADO</strong> tem vários <strong>HISTÓRICOS</strong> (1:N)</p>
+      <p><strong>CHAMADO</strong> recebe uma <strong>AVALIAÇÃO</strong> (1:1)</p>
+    </div>
+
+    <p>As chaves estrangeiras garantem integridade e coesão. Procedures gerenciam operações críticas e backups garantem disponibilidade.</p>
+  </div>
+</section>
+
 
 
       <section id="ia" aria-labelledby="titulo-ia">
@@ -752,12 +713,15 @@ IF descricao LIKE '%não imprime%' THEN
     </main>
 
     <footer>
-      <p>&copy; 2025 - Projeto Acadêmico Kathlon - UNIP</p>
-    </footer>
-  </div>
+  <p>&copy; 2025 - Projeto Acadêmico Kathlon - UNIP</p>
+  <button id="btn-topo" onclick="scrollToTopo()" aria-label="Voltar ao topo">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="#5E90F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+</footer>
 
-  
-  <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="btn-topo">↑</button>
+
+
+
   
    <!-- JavaScript externo -->
   <script src="script.js"></script>
