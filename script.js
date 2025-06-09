@@ -112,10 +112,16 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.style.alignItems = "center";
       modal.style.zIndex = 9999;
 
+      // 🔧 Correções importantes:
+      modal.style.padding = "1rem"; // evita bordas coladas
+      modal.style.overflow = "auto"; // permite scroll se a imagem for grande
+      modal.style.boxSizing = "border-box";
+      modal.style.touchAction = "manipulation"; // melhora toque em mobile
+
       const fullImg = document.createElement("img");
       fullImg.src = img.src;
-      fullImg.style.maxWidth = "90%";
-      fullImg.style.maxHeight = "90%";
+      fullImg.style.maxWidth = "90vw";
+      fullImg.style.maxHeight = "90vh";
       fullImg.style.borderRadius = "12px";
       fullImg.style.boxShadow = "0 0 30px rgba(0, 0, 0, 0.2)";
       fullImg.style.border = "1px solid #ddd";
@@ -124,12 +130,14 @@ document.addEventListener("DOMContentLoaded", () => {
       modal.appendChild(fullImg);
       document.body.appendChild(modal);
 
+      // Fecha ao clicar fora
       modal.addEventListener("click", () => {
         document.body.removeChild(modal);
       });
     });
   });
 });
+
 
 // Animação dos cards com GSAP ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -207,3 +215,17 @@ window.addEventListener('scroll', () => {
     btn.classList.remove('mostrar');
   }
 });
+
+gsap.utils.toArray("section").forEach(sec => {
+  gsap.from(sec, {
+    scrollTrigger: {
+      trigger: sec,
+      start: "top 85%",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.8,
+    ease: "power2.out"
+  });
+});
+
