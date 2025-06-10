@@ -184,17 +184,4 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.2
   });
 
-  // Todas as seções
-  gsap.utils.toArray("section").forEach(sec => {
-    gsap.from(sec, {
-      scrollTrigger: {
-        trigger: sec,
-        start: "top 85%",
-      },
-      opacity: 0,
-      y: 50,
-      duration: 0.8,
-      ease: "power2.out"
-    });
-  });
 });
