@@ -577,7 +577,6 @@ h4 {
   }
 }
 
-
 /* Só aparece se for ativado e estiver em tela mobile */
 /* Dentro do @media */
 @media (max-width: 992px) {
@@ -604,7 +603,6 @@ h4 {
   cursor: pointer;
 }
 
-
 #sistema {
   background-color: #ffffff; /* mesmo fundo das outras seções */
   padding: 4rem 2rem;
@@ -630,13 +628,14 @@ h4 {
   transform: scale(1.1);
   background-color: #f0f0f0;
 }
+
 footer {
   position: relative;
 }
 
 /* 🔷 Estilo base da navbar para desktop */
 .navbar {
-  display: none; /* escondida até ativar com .open */
+  display: flex; /* ✅ corrigido para sempre estar presente */
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
@@ -645,10 +644,11 @@ footer {
   padding: 1rem;
   transition: all 0.3s ease-in-out;
   z-index: 1000;
+  transform: translateX(0); /* desktop não desliza */
 }
 
 .navbar.open {
-  display: flex;
+  transform: translateX(0);
 }
 
 .navbar a {
@@ -670,6 +670,7 @@ footer {
   display: none;
 }
 
+/* MOBILE STYLES */
 @media (max-width: 992px) {
   .menu-button {
     display: block;
@@ -683,8 +684,6 @@ footer {
     z-index: 1002;
   }
 
-  /* 🔷 Estilo da navbar quando ativa no mobile */
- @media (max-width: 992px) {
   .navbar {
     position: fixed;
     top: 0;
@@ -701,15 +700,13 @@ footer {
     transform: translateX(100%);
     transition: transform 0.3s ease;
     box-shadow: -4px 0 20px rgba(8, 8, 8, 0.15);
-    overflow-y: auto; /* ✅ permite rolagem */
+    overflow-y: auto; /* ✅ permite rolagem interna */
     z-index: 1001;
   }
 
   .navbar.open {
     transform: translateX(0);
   }
-}
-
 
   .navbar a {
     margin-bottom: 0.8rem;
@@ -728,7 +725,6 @@ footer {
     color: #000;
   }
 
-  /* 🔷 Overlay escuro no fundo ao abrir o menu */
   .menu-overlay {
     display: none;
   }
@@ -744,7 +740,6 @@ footer {
     z-index: 999;
   }
 
-  /* 🔷 Botão "X" de fechar no topo da navbar mobile */
   .menu-close {
     align-self: flex-end;
     background: none;
@@ -755,6 +750,7 @@ footer {
     cursor: pointer;
   }
 }
+
 
 .valores-grid,
 .funcionalidades-grid {
