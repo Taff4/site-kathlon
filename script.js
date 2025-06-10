@@ -24,28 +24,26 @@ function enterSite() {
   animarSplash();
 }
 
-// Botão de menu responsivo
 function toggleMenu() {
   const navbar = document.querySelector('.navbar');
   const overlay = document.querySelector('.menu-overlay');
+  const body = document.body;
 
   if (window.innerWidth <= 992) {
-    if (!navbar.classList.contains('open')) {
-      navbar.style.top = `${window.scrollY}px`;
-    }
+    const isOpen = navbar.classList.contains('open');
     navbar.classList.toggle('open');
     overlay.classList.toggle('active');
+    body.style.overflow = isOpen ? '' : 'hidden'; // 🔒 bloqueia ou libera scroll do fundo
   } else {
     navbar.classList.toggle('open');
     overlay.classList.remove('active');
   }
 }
-
 // Fecha o menu via botão ou link
 function fecharMenu() {
   const navbar = document.querySelector('.navbar');
   const overlay = document.querySelector('.menu-overlay');
-
+  document.body.style.overflow = ''; // ✅ libera rolagem ao fechar menu
   navbar.classList.remove("open");
   overlay.classList.remove("active");
 }
