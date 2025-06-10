@@ -71,13 +71,28 @@ window.addEventListener('scroll', () => {
 
 // Inicializações após DOM carregado
 document.addEventListener("DOMContentLoaded", () => {
-  // Fecha menu ao clicar em link
+  const navbar = document.querySelector(".navbar");
+  const overlay = document.querySelector(".menu-overlay");
+  const body = document.body;
   const links = document.querySelectorAll(".navbar a");
+
+  function fecharMenu() {
+    navbar.classList.remove("open");
+    overlay.classList.remove("active");
+    body.style.overflow = ""; // Libera a rolagem
+  }
+
+  // Fecha o menu ao clicar em qualquer link
   links.forEach(link => {
-    link.addEventListener("click", () => {
-      document.querySelector(".navbar").classList.remove("open");
+    link.addEventListener("click", (e) => {
+      e.stopPropagation(); // Impede propagação do clique
+      fecharMenu();
     });
   });
+
+  // Fecha o menu ao clicar no overlay
+  overlay.addEventListener("click", fecharMenu);
+});
 
   // Imagens em tela cheia
   const imagens = document.querySelectorAll(".imagem-interativa");
@@ -188,4 +203,4 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.2
   });
 
-});
+
