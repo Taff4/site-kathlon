@@ -756,7 +756,6 @@ footer {
   }
 }
 
-/* 🎯 Cards reutilizáveis — unificado e otimizado */
 .valores-grid,
 .funcionalidades-grid {
   display: flex;
@@ -767,7 +766,7 @@ footer {
 }
 
 .card {
-  flex: 1 1 calc(33.333% - 1rem); /* 3 por linha com espaçamento */
+  flex: 1 1 calc(33.333% - 1rem);
   min-width: 280px;
   max-width: 100%;
   width: 100%;
@@ -796,7 +795,6 @@ footer {
   text-align: center;
 }
 
-/* Cards em "Missão, Visão e Valores" com layout horizontal fixo */
 .missao-visao-valores .card {
   display: inline-block;
   vertical-align: top;
@@ -804,7 +802,6 @@ footer {
   margin-right: 2%;
 }
 
-/* 📱 Responsividade dos cards */
 @media (max-width: 992px) {
   .valores-grid,
   .funcionalidades-grid {
@@ -821,4 +818,3 @@ footer {
     margin-right: 0;
   }
 }
-
