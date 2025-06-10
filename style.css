@@ -834,13 +834,11 @@ footer {
     box-shadow: -4px 0 20px rgba(8, 8, 8, 0.15);
     overflow-y: auto;
     z-index: 1001;
-    display: none;
   }
 
   .navbar.open {
     transform: translateX(0);
     top: auto;
-    display: flex;
   }
 }
 
