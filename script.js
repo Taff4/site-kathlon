@@ -127,7 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animações com GSAP
   gsap.registerPlugin(ScrollTrigger);
 
-  // Splash
   gsap.from("#logoPrincipal", {
     duration: 1.2,
     y: -80,
@@ -158,8 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out"
   });
 
-  // 🔥 AQUI foi removida a animação de .card
-  // Se quiser restaurar depois, basta usar gsap.fromTo(...)
+  // ❌ Animação dos cards REMOVIDA
 
   // Elementos com fade-scroll
   gsap.utils.toArray(".fade-scroll").forEach(el => {
