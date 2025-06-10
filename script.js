@@ -158,23 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out"
   });
 
-  // Cards animados
-  gsap.utils.toArray(".card").forEach(card => {
-    gsap.fromTo(card,
-      { opacity: 0, y: 50 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 85%",
-          toggleActions: "play none none reverse"
-        }
-      }
-    );
-  });
+  // 🔥 AQUI foi removida a animação de .card
+  // Se quiser restaurar depois, basta usar gsap.fromTo(...)
 
   // Elementos com fade-scroll
   gsap.utils.toArray(".fade-scroll").forEach(el => {
