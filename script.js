@@ -29,24 +29,30 @@ function toggleMenu() {
   const overlay = document.querySelector('.menu-overlay');
   const body = document.body;
 
-  if (window.innerWidth <= 992) {
-    const isOpen = navbar.classList.contains('open');
-    navbar.classList.toggle('open');
+  const isMobile = window.innerWidth <= 992;
+  const isOpen = navbar.classList.contains('open');
+
+  navbar.classList.toggle('open');
+
+  if (isMobile) {
     overlay.classList.toggle('active');
-    body.style.overflow = isOpen ? '' : 'hidden'; // 🔒 bloqueia ou libera scroll do fundo
+    body.style.overflow = isOpen ? '' : 'hidden'; // bloqueia scroll no mobile
   } else {
-    navbar.classList.toggle('open');
     overlay.classList.remove('active');
+    body.style.overflow = ''; // sempre libera scroll no desktop
   }
 }
-// Fecha o menu via botão ou link
+
 function fecharMenu() {
   const navbar = document.querySelector('.navbar');
   const overlay = document.querySelector('.menu-overlay');
-  document.body.style.overflow = ''; // ✅ libera rolagem ao fechar menu
-  navbar.classList.remove("open");
-  overlay.classList.remove("active");
+  const body = document.body;
+
+  navbar.classList.remove('open');
+  overlay.classList.remove('active');
+  body.style.overflow = ''; // sempre libera rolagem
 }
+
 
 // Scroll para o topo
 function scrollToTopo() {
