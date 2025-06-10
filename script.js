@@ -15,8 +15,6 @@ function animarSplash() {
       const content = document.getElementById('site-content');
       content.classList.remove('hidden');
       content.classList.add('fade-in');
-      // Scroll suave até o conteúdo
-      content.scrollIntoView({ behavior: 'smooth' });
     }, 1000);
   }, 800);
 }
@@ -69,18 +67,11 @@ window.addEventListener('scroll', () => {
 
 // Inicializações após DOM carregado
 document.addEventListener("DOMContentLoaded", () => {
-  // Garante que o menu mobile inicie fechado
-  const navbar = document.querySelector('.navbar');
-  const overlay = document.querySelector('.menu-overlay');
-  navbar.classList.remove('open');
-  overlay.classList.remove('active');
-
   // Fecha menu ao clicar em link
   const links = document.querySelectorAll(".navbar a");
   links.forEach(link => {
     link.addEventListener("click", () => {
-      navbar.classList.remove("open");
-      overlay.classList.remove("active");
+      document.querySelector(".navbar").classList.remove("open");
     });
   });
 
@@ -128,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("menu-toggle");
   if (toggle) {
     toggle.addEventListener("click", () => {
+      const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("open");
     });
   }
@@ -135,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Animações com GSAP
   gsap.registerPlugin(ScrollTrigger);
 
+  // Splash
   gsap.from("#logoPrincipal", {
     duration: 1.2,
     y: -80,
@@ -165,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ease: "power3.out"
   });
 
+  // Cards animados
   gsap.utils.toArray(".card").forEach(card => {
     gsap.fromTo(card,
       { opacity: 0, y: 50 },
@@ -182,6 +176,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   });
 
+  // Elementos com fade-scroll
   gsap.utils.toArray(".fade-scroll").forEach(el => {
     gsap.from(el, {
       scrollTrigger: {
@@ -195,6 +190,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // Seção do banco de dados
   gsap.from("#bd", {
     scrollTrigger: {
       trigger: "#bd",
@@ -205,6 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: 1.2
   });
 
+  // Todas as seções
   gsap.utils.toArray("section").forEach(sec => {
     gsap.from(sec, {
       scrollTrigger: {
